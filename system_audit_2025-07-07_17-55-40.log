@@ -1,0 +1,37 @@
+
+=== Command: hostname ===
+ubuntuserv
+
+=== Command: uptime ===
+ 12:25:41 up  2:05,  3 users,  load average: 0.65, 0.53, 0.23
+
+=== Command: df -h ===
+Filesystem                         Size  Used Avail Use% Mounted on
+tmpfs                              387M  1.6M  386M   1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv  9.8G  3.1G  6.2G  34% /
+tmpfs                              1.9G     0  1.9G   0% /dev/shm
+tmpfs                              5.0M     0  5.0M   0% /run/lock
+/dev/sda2                          1.8G  192M  1.5G  12% /boot
+tmpfs                              387M   12K  387M   1% /run/user/1000
+
+=== Command: free -m ===
+               total        used        free      shared  buff/cache   available
+Mem:            3868         556        2826           1         722        3311
+Swap:              0           0           0
+
+=== Command: echo 1234 | sudo -S -p '' ufw status ===
+Status: active
+
+To                         Action      From
+--                         ------      ----
+1194/udp                   ALLOW       Anywhere                  
+22/tcp                     ALLOW       10.8.0.0/24               
+80/tcp                     ALLOW       10.8.0.0/24               
+443/tcp                    ALLOW       10.8.0.0/24               
+1194/udp (v6)              ALLOW       Anywhere (v6)             
+
+
+=== Command: echo 1234 | sudo -S -p '' fail2ban-client status ===
+Status
+|- Number of jail:	1
+`- Jail list:	sshd

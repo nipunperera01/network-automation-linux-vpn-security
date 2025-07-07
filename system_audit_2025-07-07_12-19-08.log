@@ -1,0 +1,38 @@
+
+=== Command: hostname ===
+ubuntuserv
+
+=== Command: uptime ===
+ 06:49:10 up  1:05,  2 users,  load average: 0.18, 0.48, 0.31
+
+=== Command: df -h ===
+Filesystem                         Size  Used Avail Use% Mounted on
+tmpfs                              387M  1.6M  386M   1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv  9.8G  3.1G  6.2G  33% /
+tmpfs                              1.9G     0  1.9G   0% /dev/shm
+tmpfs                              5.0M     0  5.0M   0% /run/lock
+/dev/sda2                          1.8G  192M  1.5G  12% /boot
+tmpfs                              387M   12K  387M   1% /run/user/1000
+
+=== Command: free -m ===
+               total        used        free      shared  buff/cache   available
+Mem:            3868         576        1792           1        1790        3291
+Swap:              0           0           0
+
+=== Command: echo 1234 | sudo -S -p '' ufw status ===
+Status: active
+
+To                         Action      From
+--                         ------      ----
+1194/udp                   ALLOW       Anywhere                  
+22/tcp                     ALLOW       10.8.0.0/24               
+80/tcp                     ALLOW       10.8.0.0/24               
+443/tcp                    ALLOW       10.8.0.0/24               
+1194/udp (v6)              ALLOW       Anywhere (v6)             
+
+
+=== Command: echo 1234 | sudo -S -p '' fail2ban-client status ===
+(No output)
+[Error]
+2025-07-07 06:49:10,429 fail2ban                [14565]: ERROR   Failed to access socket path: /var/run/fail2ban/fail2ban.sock. Is fail2ban running?
+
