@@ -21,6 +21,8 @@ This project uses Python's Paramiko library to:
 ## 📁 Included Files
 - `system_check_log.py`: Runs and logs system checks
 - `backup_config_files.py`: Downloads `/etc/` config files
+- `ssh_test.py`: First test - show server details
+- `multi_command_automation.py`: Runs multi commands in one file
 - `backups/`: Sample output folder
 - `screenshots/`: Screenshots of output and config files
 
